@@ -13,7 +13,7 @@ ip netns exec orb_sat ip link set lo up
 # 3) Create and connect Virtual Ethernet
 ip link add veth_earth type veth peer name veth_sat
 ip link set veth_earth netns earth_base
-ip link ser veth_sat netns orb_sat
+ip link set veth_sat netns orb_sat
 
 # 3.1) Turn on
 ip netns exec earth_base ip link set veth_earth up

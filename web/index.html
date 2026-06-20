@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>deeplink</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="static/styles.css">
+  <script src="static/script.js" defer></script>
+  <title>Deeplink Control Panel</title>
 </head>
 <body>
-    <h1>hello world</h1>
+  <header>
+    <h1>Deeplink — Control Panel</h1>
+    <p class="lead">Manage the simulated space network from your browser.</p>
+  </header>
+
+  <main class="card">
+    <section>
+      <h2>Network Setup</h2>
+      <p>Use the button below to run the environment setup script (executes <code>env-up.sh</code> on the server).</p>
+
+      <div style="display:flex;gap:12px;align-items:center;">
+        <button id="btn-setup">Start Network (env-up)</button>
+        <button id="btn-teardown" style="background:#e11d48;border-color:#e11d48;">Tear Down (env-down)</button>
+      </div>
+
+      <div id="output" aria-live="polite">
+        Status: <strong id="status-text">idle</strong>
+      </div>
+
+      <details style="margin-top:10px">
+        <summary>Last server response</summary>
+        <pre id="last-response">none</pre>
+      </details>
+    </section>
+  </main>
 </body>
 </html>
